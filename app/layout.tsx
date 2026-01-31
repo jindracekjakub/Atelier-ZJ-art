@@ -24,4 +24,10 @@ export default function RootLayout({
         </html>
     );
 }
+import { Caveat } from "next/font/google";
+
+const handwriting = Caveat({
+    subsets: ["latin"],
+    weight: ["400", "600"],
+});
 

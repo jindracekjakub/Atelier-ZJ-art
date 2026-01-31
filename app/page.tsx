@@ -7,6 +7,7 @@ import { useState } from "react";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 
+{/* galerie niga */}
 export default function Home() {
     const images = Array.from({ length: 8 }, (_, i) => ({
         src: `/pictures/placeholder${i + 1}.jpg`,
@@ -27,7 +28,17 @@ export default function Home() {
     const [index, setIndex] = useState(-1);
 
     return (
-        <main className="min-h-screen bg-[#f5ecd9] text-[#4b2e1e] font-serif selection:bg-[#7a5230] selection:text-[#f5ecd9]">
+        <main className="min-h-screen bg-[#f5ecd9] text-[#4b2e1e] font-serif selection:bg-[#7a5230] selection:text-[#f5ecd9] relative overflow-hidden">
+
+            <div
+                className="absolute inset-0 pointer-events-none"
+                style={{
+                    backgroundImage: "url('/textures/paper3.jpg')",
+                    backgroundRepeat: "repeat",
+                    opacity: 0.25,
+                    mixBlendMode: "normal"
+                }}
+            />
 
             <section className="relative h-[90vh] flex flex-col items-center justify-center text-center px-6">
                 <motion.div
@@ -38,6 +49,7 @@ export default function Home() {
                     <h1 className="text-5xl md:text-7xl font-bold mb-4 tracking-tight">
                         Atelier ZJ-art
                     </h1>
+
                     <p className="text-lg md:text-2xl mb-8 max-w-2xl mx-auto opacity-90">
                         Výtvarný ateliér – portréty, obrazy na zakázku, kurzy kresby a tvořivé dílny pro děti i dospělé.
                     </p>
@@ -86,7 +98,7 @@ export default function Home() {
                                     sizes="(max-width: 768px) 50vw, 25vw"
                                     className="object-cover transition duration-500 group-hover:scale-110"
                                 />
-                                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors" />
+                                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors"/>
                             </motion.div>
                         ))}
                     </div>
@@ -106,7 +118,7 @@ export default function Home() {
                     href="/kontakt"
                     className="inline-block border-2 border-[#7a5230] text-[#7a5230] px-12 py-4 rounded-full font-bold hover:bg-[#7a5230] hover:text-[#f5ecd9] transition-all"
                 >
-                    Napište mi
+                    Kontaktujte mě
                 </Link>
             </section>
 
