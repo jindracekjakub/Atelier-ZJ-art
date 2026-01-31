@@ -7,7 +7,6 @@ import { useState } from "react";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 
-/* 🎬 Jednotný animační systém */
 const fadeUp = {
     hidden: { opacity: 0, y: 40 },
     show: {

@@ -16,7 +16,7 @@ export default function Navbar() {
     ];
 
     return (
-        <nav className="bg-gradient-to-r from-[#4b3621] via-[#3e2b1f] to-[#2b1d12] text-[#f5ecd9] sticky top-0 z-50 shadow-lg overflow-hidden rounded-b-4xl">
+        <nav className="bg-gradient-to-r from-[#4b3621] via-[#3e2b1f] to-[#2b1d12] text-[#f5ecd9] sticky top-0 z-50 shadow-lg overflow-hidden">
             <div className="max-w-7xl mx-auto px-4 md:px-8">
                 <div className="flex justify-between items-center h-16 md:h-20">
                     <Link
@@ -26,7 +26,6 @@ export default function Navbar() {
                         Atelier ZJ‑art
                     </Link>
 
-                    {/* Desktop Menu */}
                     <div className="hidden md:flex space-x-1 bg-[#2b1d12]/20 rounded-[16px] p-1">
                         {menuItems.map((item) => (
                             <Link
@@ -39,7 +38,6 @@ export default function Navbar() {
                         ))}
                     </div>
 
-                    {/* Mobile Hamburger */}
                     <div className="md:hidden">
                         <button
                             onClick={() => setOpen(!open)}
@@ -52,7 +50,6 @@ export default function Navbar() {
                 </div>
             </div>
 
-            {/* Mobile Menu */}
             {open && (
                 <div className="md:hidden animate-in slide-in-from-top-5 duration-300 mx-4 mt-2">
                     <div className="bg-[#3e2b1f] rounded-[20px] shadow-xl overflow-hidden border border-[#2b1d12]/30">
