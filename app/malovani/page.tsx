@@ -64,13 +64,13 @@ export default function PortretyNaZakazku() {
                     backgroundImage: "url('/textures/paper3.jpg')",
                     backgroundRepeat: "repeat",
                     opacity: 0.2,
-                    mixBlendMode: "multiply",
+                    mixBlendMode: "normal",
                 }}
             />
 
             <section className="relative h-[70vh] flex flex-col items-center justify-center text-center px-6 md:px-20 mt-8">
                 <motion.h1
-                    className="text-5xl md:text-7xl font-bold mb-6 tracking-tight"
+                    className="text-5xl md:text-6xl font-bold mb-6 tracking-tight"
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
@@ -116,25 +116,6 @@ export default function PortretyNaZakazku() {
                             Ručně malovaný obraz je stylovým doplňkem interiéru. Malby jsou realizovány na kvalitní plátna a hotové i přes boky.
                         </p>
                     </div>
-                </div>
-
-                <div
-                    className="space-y-4 mt-8"
-                >
-                    <h3 className="text-2xl font-bold">Důležité info</h3>
-                    <ul className="space-y-3">
-                        {[
-                            "Portréty maluji podle kvalitní fotografie",
-                            "Termín vyhotovení obvykle do 14 dnů",
-                            "Možnost expresního dodání po dohodě",
-                            "Bezpečné doručení (poštovné 90–120 Kč)",
-                        ].map((item, i) => (
-                            <li key={i} className="flex items-start gap-2">
-                                <span className="text-[#7a5230] mt-1">✦</span>
-                                <span className="text-sm md:text-base italic">{item}</span>
-                            </li>
-                        ))}
-                    </ul>
                 </div>
 
                 <div
@@ -189,7 +170,7 @@ export default function PortretyNaZakazku() {
 
             <Lightbox open={index >= 0} close={() => setIndex(-1)} slides={galleryImages} index={index} />
 
-            <section className="py-24 text-center">
+            <section className="py-24 text-center bg-[#f5ecd9]">
                 <h3 className="text-2xl mb-8">Chcete objednat portrét nebo obraz?</h3>
                 <Link
                     href="/kontakt"

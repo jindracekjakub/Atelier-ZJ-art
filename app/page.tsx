@@ -46,9 +46,15 @@ export default function Home() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
                 >
-                    <h1 className="text-5xl md:text-7xl font-bold mb-4 tracking-tight">
-                        Atelier ZJ-art
-                    </h1>
+                        <Image
+                            src="/pictures/logo1.png"
+                            alt="Atelier ZJ-art logo"
+                            width={500}
+                            height={300}
+                            priority
+                            className="w-full h-auto"
+                        />
+
 
                     <p className="text-lg md:text-2xl mb-8 max-w-2xl mx-auto opacity-90">
                         Výtvarný ateliér – portréty, obrazy na zakázku, kurzy kresby a tvořivé dílny pro děti i dospělé.
