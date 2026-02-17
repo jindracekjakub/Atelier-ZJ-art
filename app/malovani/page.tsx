@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { animate } from "framer-motion";
 import { useState } from "react";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
@@ -34,13 +35,16 @@ const fadeRight = {
     },
 };
 
-const handleScroll = (e: { preventDefault: () => void; }) => {
+const handleScroll = (e: React.MouseEvent) => {
     e.preventDefault();
     const element = document.getElementById("galerie");
     if (element) {
-        element.scrollIntoView({
-            behavior: "smooth",
-            block: "start",
+        const offset = element.offsetTop;
+        animate(window.scrollY, offset, {
+            type: "spring",
+            stiffness: 100,
+            damping: 20,
+            onUpdate: (latest) => window.scrollTo(0, latest),
         });
     }
 };

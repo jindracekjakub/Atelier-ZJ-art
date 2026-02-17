@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { animate } from "framer-motion";
 import { useState } from "react";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
@@ -14,17 +15,19 @@ export default function Home() {
         alt: `Výtvarná tvorba v Atelieru ZJ-art - ukázka ${i + 1}`,
     }));
 
-    const handleScroll = (e: { preventDefault: () => void; }) => {
+    const handleScroll = (e: React.MouseEvent) => {
         e.preventDefault();
         const element = document.getElementById("gallery");
         if (element) {
-            element.scrollIntoView({
-                behavior: "smooth",
-                block: "start",
+            const offset = element.offsetTop;
+            animate(window.scrollY, offset, {
+                type: "spring",
+                stiffness: 100,
+                damping: 20,
+                onUpdate: (latest) => window.scrollTo(0, latest),
             });
         }
     };
-
     const [index, setIndex] = useState(-1);
 
     return (
@@ -41,32 +44,51 @@ export default function Home() {
             />
 
             <section className="relative h-[90vh] flex flex-col items-center justify-center text-center px-6">
-                <motion.div
+
+                <motion.h1
+                    className="text-5xl md:text-6xl font-bold mb-6 tracking-tight"
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
                 >
-                        <Image
-                            src="/pictures/logo1.png"
-                            alt="Atelier ZJ-art logo"
-                            width={500}
-                            height={300}
-                            priority
-                            className="w-full h-auto"
-                        />
+                    <Image
+                        src="/pictures/logo1.png"
+                        alt="Atelier ZJ-art logo"
+                        width={550}
+                        height={350}
+                        priority
+                        className="w-full h-auto"
+                    />
+                </motion.h1>
 
+                <motion.p
+                    className="text-lg md:text-2xl max-w-3xl opacity-90 mb-8"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.5, duration: 0.8 }}
+                >
 
-                    <p className="text-lg md:text-2xl mb-8 max-w-2xl mx-auto opacity-90">
+                    <p className="text-lg md:text-2xl mb-8 max-w-2xl mx-auto opacity-90 -mt-5">
                         Výtvarný ateliér – portréty, obrazy na zakázku, kurzy kresby a tvořivé dílny pro děti i dospělé.
                     </p>
+
+                </motion.p>
+
+                <motion.p
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.5, duration: 0.8 }}
+                >
                     <Link
                         href="#gallery"
                         onClick={handleScroll}
-                        className="inline-block bg-[#7a5230] text-[#f5ecd9] px-10 py-4 rounded-full font-semibold transition hover:bg-[#5e3e25] hover:scale-105 active:scale-95 shadow-lg"
+                        className="inline-block bg-[#7a5230] text-[#f5ecd9] px-10 py-4 rounded-full font-semibold transition hover:bg-[#5e3e25] hover:scale-105 active:scale-95 shadow-lg -mt-8"
                     >
                         Prohlédnout galerii
                     </Link>
-                </motion.div>
+                </motion.p>
+
+
             </section>
 
             <section
