@@ -67,7 +67,7 @@ export default function PortretyNaZakazku() {
                 style={{
                     backgroundImage: "url('/textures/paper3.jpg')",
                     backgroundRepeat: "repeat",
-                    opacity: 0.2,
+                    opacity: 0.32,
                     mixBlendMode: "normal",
                 }}
             />
@@ -91,13 +91,21 @@ export default function PortretyNaZakazku() {
                     Originální dárek nebo dekorace do vašeho interiéru – portréty a ručně malované obrazy podle vašich přání.
                 </motion.p>
 
-                <Link
-                    href="#galerie"
-                    onClick={handleScroll} //tohle opravuje tlacitko aby se dalo scrollnout vickrat
-                    className="inline-block bg-[#7a5230] text-[#f5ecd9] px-10 py-4 rounded-full font-semibold hover:bg-[#5e3e25] hover:scale-105 transition-all shadow-lg"
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 1 }}
                 >
-                    Ukázky prací
-                </Link>
+                    <Link
+                        href="#galerie"
+                        onClick={handleScroll} //tohle opravuje tlacitko aby se dalo scrollnout vickrat
+                        className="inline-block bg-[#7a5230] text-[#f5ecd9] px-10 py-4 rounded-full font-semibold hover:bg-[#5e3e25] hover:scale-105 transition-all shadow-lg"
+                    >
+                        Ukázky prací
+                    </Link>
+                </motion.div>
+
+
             </section>
 
             <section className="py-24 px-6 md:px-20 space-y-16 max-w-5xl mx-auto">

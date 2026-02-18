@@ -47,7 +47,7 @@ export default function Kontakt() {
                 style={{
                     backgroundImage: "url('/textures/paper3.jpg')",
                     backgroundRepeat: "repeat",
-                    opacity: 0.2,
+                    opacity: 0.32,
                 }}
             />
 
@@ -148,7 +148,7 @@ export default function Kontakt() {
                 </motion.form>
             </section>
 
-            <footer className="py-10 text-center text-sm opacity-70 border-t border-[#7a5230]/20">
+            <footer className="py-10 text-center text-sm opacity-70 border-t border-[#7a5230]/20 ">
                 © {new Date().getFullYear()} Atelier ZJ-art – Hořín u Mělníka
             </footer>
         </main>

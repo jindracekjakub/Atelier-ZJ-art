@@ -2,18 +2,18 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { animate } from "framer-motion";
+import { motion, animate } from "framer-motion";
 import { useState } from "react";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 
-{/* galerie niga */}
 export default function Home() {
     const images = Array.from({ length: 8 }, (_, i) => ({
         src: `/pictures/placeholder${i + 1}.jpg`,
         alt: `Výtvarná tvorba v Atelieru ZJ-art - ukázka ${i + 1}`,
     }));
+
+    const [index, setIndex] = useState(-1);
 
     const handleScroll = (e: React.MouseEvent) => {
         e.preventDefault();
@@ -22,73 +22,128 @@ export default function Home() {
             const offset = element.offsetTop;
             animate(window.scrollY, offset, {
                 type: "spring",
-                stiffness: 100,
+                stiffness: 90,
                 damping: 20,
                 onUpdate: (latest) => window.scrollTo(0, latest),
             });
         }
     };
-    const [index, setIndex] = useState(-1);
 
     return (
         <main className="min-h-screen bg-[#f5ecd9] text-[#4b2e1e] font-serif selection:bg-[#7a5230] selection:text-[#f5ecd9] relative overflow-hidden">
 
+            {/* textura */}
             <div
-                className="absolute inset-0 pointer-events-none"
+                className="absolute inset-0 pointer-events-none z-0"
                 style={{
                     backgroundImage: "url('/textures/paper3.jpg')",
                     backgroundRepeat: "repeat",
-                    opacity: 0.25,
-                    mixBlendMode: "normal"
+                    opacity: 0.32,
                 }}
             />
 
-            <section className="relative h-[90vh] flex flex-col items-center justify-center text-center px-6">
+            <section className="relative h-[95vh] flex flex-col items-center justify-center text-center px-6">
 
-                <motion.h1
-                    className="text-5xl md:text-6xl font-bold mb-6 tracking-tight"
-                    initial={{ opacity: 0, y: 30 }}
+                <motion.div
+                    initial={{ opacity: 0, y: 40 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    transition={{ duration: 1.2 }}
                 >
                     <Image
                         src="/pictures/logo1.png"
                         alt="Atelier ZJ-art logo"
-                        width={550}
-                        height={350}
+                        width={570}
+                        height={370}
                         priority
-                        className="w-full h-auto"
+                        className="drop-shadow-lg"
                     />
-                </motion.h1>
+                </motion.div>
 
                 <motion.p
-                    className="text-lg md:text-2xl max-w-3xl opacity-90 mb-8"
+                    className="text-lg md:text-xl max-w-2xl mt-6 leading-relaxed opacity-90 "
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{ delay: 0.5, duration: 0.8 }}
+                    transition={{ delay: 0.6, duration: 1 }}
                 >
-
-                    <p className="text-lg md:text-2xl mb-8 max-w-2xl mx-auto opacity-90 -mt-5">
-                        Výtvarný ateliér – portréty, obrazy na zakázku, kurzy kresby a tvořivé dílny pro děti i dospělé.
-                    </p>
-
+                    Výtvarný ateliér – portréty, obrazy na zakázku,
+                    kurzy kresby a tvořivé dílny pro děti i dospělé.
                 </motion.p>
 
-                <motion.p
+                <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{ delay: 0.5, duration: 0.8 }}
+                    transition={{ delay: 1 }}
                 >
                     <Link
                         href="#gallery"
                         onClick={handleScroll}
-                        className="inline-block bg-[#7a5230] text-[#f5ecd9] px-10 py-4 rounded-full font-semibold transition hover:bg-[#5e3e25] hover:scale-105 active:scale-95 shadow-lg -mt-8"
+                        className="inline-block mt-10 bg-[#7a5230] text-[#f5ecd9] px-10 py-4 rounded-full font-semibold transition hover:bg-[#5e3e25] hover:scale-105 active:scale-95 shadow-lg"
                     >
                         Prohlédnout galerii
                     </Link>
-                </motion.p>
+                </motion.div>
+            </section>
 
+            <section className="py-24 px-6 md:px-20 bg-[#efe3c7]">
+                <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center ">
 
+                    <motion.div
+                        initial={{ opacity: 0, x: -40 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                    >
+                        <Image
+                            src="/pictures/placeholder1.jpg"
+                            alt="Ateliér ZJ-art"
+                            width={500}
+                            height={400}
+                            className="rounded-2xl shadow-xl relative z-10"
+                        />
+                    </motion.div>
+
+                    <motion.div
+                        initial={{ opacity: 0, x: 40 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                    >
+                        <h2 className="text-3xl md:text-4xl font-bold mb-6 relative z-10">
+                            O ateliéru
+                        </h2>
+                        <p className="leading-relaxed mb-4">
+                            Nabízím výtvarný kroužek pro děti v krásném ateliéru v Hoříně,
+                            kde se zaměřuji na rozvoj tvořivosti, představivosti a fantazie.
+                        </p>
+                        <p className="leading-relaxed">
+                            Pracuji v malých skupinách, s individuálním přístupem
+                            a důrazem na radost z tvorby.
+                        </p>
+                    </motion.div>
+                </div>
+            </section>
+
+            <section className="py-20 text-center bg-[#f5ecd9]">
+                <h2 className="text-3xl font-bold mb-12 relative z-10">
+                    Proč právě kroužek u mě?
+                </h2>
+
+                <div className="grid md:grid-cols-3 gap-10 max-w-5xl mx-auto px-6 ">
+                    {[
+                        { title: "Malé skupiny", text: "Individuální přístup ke každému dítěti." },
+                        { title: "Podpora kreativity", text: "Rozvoj fantazie a sebevyjádření." },
+                        { title: "Příjemné prostředí", text: "Ateliér v klidné části Hořína." },
+                    ].map((item, i) => (
+                        <motion.div
+                            key={i}
+                            whileHover={{ y: -5 }}
+                            className="bg-[#efe3c7] p-8 rounded-2xl shadow-md"
+                        >
+                            <h3 className="font-semibold mb-3 text-lg text-[#452a14]">
+                                {item.title}
+                            </h3>
+                            <p className="opacity-80">{item.text}</p>
+                        </motion.div>
+                    ))}
+                </div>
             </section>
 
             <section
@@ -96,19 +151,9 @@ export default function Home() {
                 className="py-20 px-6 md:px-20 bg-[#efe3c7] rounded-t-[3rem] shadow-2xl scroll-mt-10">
                 <div className="max-w-6xl mx-auto">
                     <header className="text-center mb-16">
-                        <h2 className="text-3xl md:text-5xl font-bold mb-6">
-                            Výtvarný kroužek Mělník
-                        </h2>
-                        <motion.p
-                            initial={{ opacity: 0 }}
-                            whileInView={{ opacity: 1 }}
-                            viewport={{ once: true }}
-                            className="max-w-3xl mx-auto text-lg leading-relaxed"
-                        >
-                            Hledáte kroužek malování pro vaše dítě? Chtěli byste namalovat portrét na zakázku? Jste z okolí Mělníku? V tom případě se neváhejte obrátit na mě.
-                            Nabízím výtvarný kroužek pro děti v krásném ateliéru v Hoříně, v mělnickém okrese, kde se zaměřuji na rozvoj dětské tvořivosti, představivosti a fantazie.
-                            Máte doma šikovného malého malíře a chtěli byste mu dát prostor k rozvoji jeho talentu či zálibě? Nabízím odpolední kroužek pro děti od 6- 11 let nebo pro starší jako průpravu k talentovým zkouškám 12-15 let.
-                        </motion.p>
+                        <h3 className="text-3xl md:text-5xl font-bold mb-6 relative z-10">
+                            Galerie
+                        </h3>
                     </header>
 
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -140,18 +185,21 @@ export default function Home() {
                 index={index}
             />
 
-            <section className="py-24 text-center bg-[#f5ecd9]">
-                <h3 className="text-2xl mb-8">Máte zájem o kurz nebo obraz na zakázku?</h3>
+            <section className="py-28 text-center bg-[#f5ecd9]">
+                <h3 className="text-2xl mb-10 font-semibold">
+                    Máte zájem o kurz nebo obraz na zakázku?
+                </h3>
+
                 <Link
                     href="/kontakt"
-                    className="inline-block border-2 border-[#7a5230] text-[#7a5230] px-12 py-4 rounded-full font-bold hover:bg-[#7a5230] hover:text-[#f5ecd9] transition-all"
+                    className="inline-block border-2 border-[#7a5230] text-[#7a5230] px-12 py-4 rounded-full font-bold hover:bg-[#7a5230] hover:text-[#f5ecd9] transition-all duration-300"
                 >
                     Kontaktujte mě
                 </Link>
             </section>
 
             <footer className="py-10 text-center text-sm opacity-70 border-t border-[#7a5230]/20">
-                © {new Date().getFullYear()} Atelier ZJ‑art – Hořín u Mělníka
+                © {new Date().getFullYear()} Atelier ZJ-art – Hořín u Mělníka
             </footer>
         </main>
     );
