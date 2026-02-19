@@ -81,7 +81,7 @@ export default function Kontakt() {
                 >
                     <h2 className="text-3xl font-bold text-[#7a5230]">Kontaktní údaje</h2>
 
-                    <div className="space-y-4 text-lg">
+                    <div className="space-y-4 text-lg relative z-10">
                         <p><strong>Email:</strong> atelierzj-art@seznam.cz</p>
                         <p><strong>Telefon:</strong> +420 723 369 633</p>
                         <p><strong>Ateliér:</strong> Hořín u Mělníka</p>
@@ -108,7 +108,7 @@ export default function Kontakt() {
                     viewport={{ once: true }}
                     className="bg-[#fff7e6] p-10 rounded-3xl shadow-md border border-[#7a5230]/10 space-y-10"
                 >
-                    <h3 className="text-2xl font-bold">Napište mi zprávu</h3>
+                    <h3 className="text-2xl font-bold relative z-10">Napište mi zprávu</h3>
 
                     <input
                         name="name"

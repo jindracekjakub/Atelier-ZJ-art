@@ -114,7 +114,7 @@ export default function PortretyNaZakazku() {
                     <div
                         className="space-y-4"
                     >
-                        <h2 className="text-3xl font-bold text-[#7a5230]">Portréty na zakázku</h2>
+                        <h2 className="text-3xl font-bold text-[#7a5230] relative z-10">Portréty na zakázku</h2>
                         <p className="leading-relaxed">
                             Portrét na zakázku je originální a osobní dárek. Maluji podle kvalitní fotografie technikou tužky, akrylu i olejomalby.
                         </p>
@@ -123,7 +123,7 @@ export default function PortretyNaZakazku() {
                     <div
                         className="space-y-4"
                     >
-                        <h2 className="text-3xl font-bold text-[#7a5230]">Abstraktní obrazy</h2>
+                        <h2 className="text-3xl font-bold text-[#7a5230] relative z-10">Abstraktní obrazy</h2>
                         <p className="leading-relaxed">
                             Ručně malovaný obraz je stylovým doplňkem interiéru. Malby jsou realizovány na kvalitní plátna a hotové i přes boky.
                         </p>
@@ -131,17 +131,17 @@ export default function PortretyNaZakazku() {
                 </div>
 
                 <div
-                    className="bg-[#fff7e6] p-8 rounded-3xl shadow-sm border border-[#7a5230]/10 mt-8"
+                    className="bg-[#fff7e6] p-8 rounded-3xl shadow-sm border border-[#7a5230]/10 mt-8 "
                 >
-                    <h3 className="text-2xl font-bold mb-6">Orientační ceník</h3>
+                    <h3 className="text-2xl font-bold mb-6 relative z-10">Orientační ceník</h3>
                     <table className="w-full text-left border-collapse">
                         <thead>
-                        <tr className="border-b border-[#7a5230]/20">
-                            <th className="py-2">Formát</th>
+                        <tr className="border-b border-[#7a5230]/20 relative z-10">
+                            <th className="py-2 ">Formát</th>
                             <th className="py-2 text-right">Cena od</th>
                         </tr>
                         </thead>
-                        <tbody className="divide-y divide-[#7a5230]/10">
+                        <tbody className="divide-y divide-[#7a5230]/10 relative z-10">
                         <tr><td className="py-3 italic">A4</td><td className="py-3 text-right">1 200 Kč</td></tr>
                         <tr><td className="py-3 italic">A3</td><td className="py-3 text-right">1 800 Kč</td></tr>
                         <tr><td className="py-3 italic">40×50 cm</td><td className="py-3 text-right">2 500 Kč</td></tr>
@@ -156,7 +156,7 @@ export default function PortretyNaZakazku() {
                 className="py-10 px-6 md:px-20 bg-[#efe3c7] rounded-t-[3rem] shadow-2xl scroll-mt-24"
             >
                 <div className="max-w-6xl mx-auto text-center mb-24">
-                    <h2 className="text-3xl md:text-5xl font-bold mb-6">Ukázky prací</h2>
+                    <h2 className="text-3xl md:text-5xl font-bold mb-6 relative z-10">Ukázky prací</h2>
                 </div>
 
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-4">

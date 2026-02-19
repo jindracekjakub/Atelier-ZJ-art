@@ -30,9 +30,8 @@ export default function Home() {
     };
 
     return (
-        <main className="min-h-screen bg-[#f5ecd9] text-[#4b2e1e] font-serif selection:bg-[#7a5230] selection:text-[#f5ecd9] relative overflow-hidden">
+        <main className="min-h-[200vh] bg-[#f5ecd9] text-[#4b2e1e] font-serif selection:bg-[#7a5230] selection:text-[#f5ecd9] relative overflow-hidden">
 
-            {/* textura */}
             <div
                 className="absolute inset-0 pointer-events-none z-0"
                 style={{

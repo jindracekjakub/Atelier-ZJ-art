@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-    --background: #ffffff;
-    --foreground: #171717;
+    --background: #f5ecd9;
+    --foreground: #4b2e1e;
 }
 
 @theme inline {
@@ -19,17 +19,23 @@
     --radius-full: 9999px;
 }
 
-@media (prefers-color-scheme: dark) {
-    :root {
-        --background: #0a0a0a;
-        --foreground: #ededed;
-    }
-}
-
 body {
-    background: var(--background);
+    background-color: var(--background); /* např. #f5ecd9 */
     color: var(--foreground);
     font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url('/textures/paper3.jpg');
+    background-repeat: repeat;
+    opacity: 0.32;
+    pointer-events: none;
+    z-index: -1;
+    mix-blend-mode: multiply;
 }
 
 @keyframes fadeUp {
@@ -47,9 +53,6 @@ body {
     animation: fadeUp 0.8s ease-out forwards;
 }
 
-html {
-    scroll-behavior: smoot;
-}
 
 *, *::before, *::after {
     box-sizing: border-box;

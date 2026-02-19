@@ -17,7 +17,7 @@ export default function RootLayout({
 }) {
     return (
         <html lang="cs">
-        <body className="bg-[#f5ecd9] text-[#4b2e1e] font-serif">
+        <body className="font-serif">
         <Navbar />
         <main>{children}</main>
         </body>
