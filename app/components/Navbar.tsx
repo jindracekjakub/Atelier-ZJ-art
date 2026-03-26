@@ -11,11 +11,11 @@ export default function Navbar() {
 
     const menuItems = [
         { label: "Domů", href: "/" },
+        { label: "Výtvarný kroužek pro děti", href: "/krouzek" },
         { label: "Malování na zakázku", href: "/malovani" },
         { label: "Fotogalerie", href: "/fotogalerie" },
         { label: "Kontakt", href: "/kontakt" },
         { label: "Příprava na talentové zkoušky na SŠ", href: "/priprava" },
-        { label: "Výtvarný kroužek pro děti", href: "/krouzek" },
     ];
 
     return (

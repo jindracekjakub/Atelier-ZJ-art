@@ -87,9 +87,9 @@ export default function Kontakt() {
                         <p><strong>Ateliér:</strong> Hořín u Mělníka</p>
                     </div>
 
-                    <div className="mt-10 w-full h-96 rounded-3xl overflow-hidden shadow-lg ">
+                    <div className="mt-10 w-full h-96 rounded-3xl overflow-hidden shadow-lg relative z-10">
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24128.1234!2d14.527!3d50.350!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b0c12345!2sHorin%2C%20Czechia!5e0!3m2!1sen!2sus!4v1680000000000!5m2!1sen!2sus"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1040.0948784737961!2d14.462686799240128!3d50.342988168373864!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470bddee048a9567%3A0x4cfc245752ff03b2!2sAtelierZJ-Art!5e0!3m2!1scs!2scz!4v1774546137183!5m2!1scs!2scz"
                             width="100%"
                             height="100%"
                             style={{ border: 0 }}
