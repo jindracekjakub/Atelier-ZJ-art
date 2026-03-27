@@ -22,10 +22,8 @@ export default function Navbar() {
         <nav className="sticky top-6 z-50 mx-4 md:mx-8 font-serif">
             <div className="bg-[#3e2b1f]/90 backdrop-blur-md rounded-[28px] shadow-2xl border border-[#f0d9b5]/10 px-6 py-4 transition-all duration-300">
 
-                {/* Desktop layout */}
                 <div className="flex justify-between items-center">
 
-                    {/* Logo + Název */}
                     <Link href="/" className="flex items-center space-x-3 group">
                         <div className="w-10 h-10 relative">
 
@@ -35,7 +33,6 @@ export default function Navbar() {
                         </span>
                     </Link>
 
-                    {/* Desktop menu */}
                     <div className="hidden md:flex space-x-2 bg-[#2b1d12]/40 rounded-[20px] p-2">
                         {menuItems.map((item) => {
                             const active = pathname === item.href;
@@ -63,27 +60,26 @@ export default function Navbar() {
                         })}
                     </div>
 
-                    {/* Mobile button */}
                     <div className="md:hidden">
                         <button
                             onClick={() => setOpen(!open)}
                             aria-label={open ? "Zavřít menu" : "Otevřít menu"}
                             className="w-12 h-12 flex items-center justify-center rounded-[14px] bg-[#2b1d12]/40 hover:bg-[#2b1d12]/60 transition-all duration-300"
                         >
-                            <div className="relative w-6 h-6">
+                            <div className="flex flex-col justify-center items-center gap-[5px] w-6 h-6">
                                 <span
-                                    className={`absolute h-[2px] w-full bg-[#f5ecd9] transition-all duration-300 ${
-                                        open ? "rotate-45 top-3" : "top-1"
+                                    className={`block h-[2px] w-5 bg-[#f5ecd9] transition-all duration-300 origin-center ${
+                                        open ? "rotate-45 translate-y-[7px]" : ""
                                     }`}
                                 />
                                 <span
-                                    className={`absolute h-[2px] w-full bg-[#f5ecd9] transition-all duration-300 ${
-                                        open ? "opacity-0" : "top-3"
+                                    className={`block h-[2px] w-5 bg-[#f5ecd9] transition-all duration-300 ${
+                                        open ? "opacity-0" : ""
                                     }`}
                                 />
                                 <span
-                                    className={`absolute h-[2px] w-full bg-[#f5ecd9] transition-all duration-300 ${
-                                        open ? "-rotate-45 top-3" : "top-5"
+                                    className={`block h-[2px] w-5 bg-[#f5ecd9] transition-all duration-300 origin-center ${
+                                        open ? "-rotate-45 -translate-y-[7px]" : ""
                                     }`}
                                 />
                             </div>
@@ -91,7 +87,6 @@ export default function Navbar() {
                     </div>
                 </div>
 
-                {/* Mobile menu */}
                 {open && (
                     <div className="md:hidden mt-4 animate-in slide-in-from-top-5 duration-300">
                         <div className="bg-[#2b1d12]/70 rounded-[22px] shadow-xl border border-[#f0d9b5]/10 p-3 backdrop-blur-md">

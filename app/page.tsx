@@ -86,7 +86,6 @@ export default function Home() {
                 }}
             />
 
-            {/* HERO */}
             <section className="relative h-[95vh] flex flex-col items-center justify-center text-center px-6">
                 <motion.div
                     initial={{ opacity: 0, y: 40 }}
@@ -165,7 +164,7 @@ export default function Home() {
             </section>
 
             <section className="py-20 text-center bg-[#f5ecd9]">
-                <h2 className="text-3xl font-bold mb-12 relative z-10">
+                <h2 className="text-3xl md:text-4xl font-bold mb-12 relative z-10">
                     Proč právě kroužek u mě?
                 </h2>
 
@@ -237,7 +236,7 @@ export default function Home() {
                         viewport={{ once: true }}
                         className="text-center mb-14"
                     >
-                        <h2 className="text-3xl md:text-4xl font-bold mb-3">
+                        <h2 className="text-3xl md:text-4xl font-bold mb-3 relative z-10">
                             Co říkají rodiče a zákazníci
                         </h2>
 

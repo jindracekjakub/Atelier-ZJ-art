@@ -11,7 +11,7 @@ export async function GET() {
     try {
         const url = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${PLACE_ID}&fields=reviews,rating,user_ratings_total&language=cs&key=${API_KEY}`;
 
-        const res = await fetch(url);
+        const res = await fetch(url, { next: { revalidate: 43200 } });
         const data = await res.json();
 
         if (data.status !== "OK") {
@@ -21,7 +21,7 @@ export async function GET() {
         const { reviews = [], rating, user_ratings_total } = data.result;
 
         const filtered = reviews
-            .sort((a: any, b: any) => b.rating - a.rating)
+            .sort((a: { rating: number }, b: { rating: number }) => b.rating - a.rating)
             .slice(0, 5);
 
         return NextResponse.json({ reviews: filtered, rating, user_ratings_total });

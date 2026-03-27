@@ -98,7 +98,7 @@ export default function PortretyNaZakazku() {
                 >
                     <Link
                         href="#galerie"
-                        onClick={handleScroll} //tohle opravuje tlacitko aby se dalo scrollnout vickrat
+                        onClick={handleScroll} //tohle opravuje tlacitko aby se dalo scrollnout vickrat niga
                         className="inline-block bg-[#7a5230] text-[#f5ecd9] px-10 py-4 rounded-full font-semibold hover:bg-[#5e3e25] hover:scale-105 transition-all shadow-lg"
                     >
                         Ukázky prací
